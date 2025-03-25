@@ -1,4 +1,3 @@
-version: '3'
 services:
   ftgo-api-gateway-graphql:
     build: ./ftgo-api-gateway-graphql

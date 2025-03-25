@@ -1,7 +1,6 @@
-version: '3'
 services:
   zookeeper:
-    image: eventuateio/eventuate-zookeeper:$EVENTUATE_COMMON_VERSION
+    image: eventuateio/eventuate-zookeeper:0.15.0.RELEASE
     ports:
       - 2181:2181
     environment:
@@ -9,7 +8,7 @@ services:
       KAFKA_HEAP_OPTS: -Xmx64m
 
   kafka:
-    image: "eventuateio/eventuate-kafka:$EVENTUATE_MESSAGING_KAFKA_IMAGE_VERSION"
+    image: eventuateio/eventuate-kafka:0.15.0.RELEASE
     ports:
       - 9092:9092
     depends_on:
@@ -35,7 +34,7 @@ services:
       - MYSQL_USER=mysqluser
       - MYSQL_PASSWORD=mysqlpw
   cdc-service:
-    image: eventuateio/eventuate-cdc-service:$EVENTUATE_CDC_VERSION
+    image: eventuateio/eventuate-cdc-service:0.13.0.RELEASE
     ports:
       - "8099:8080"
     depends_on:
